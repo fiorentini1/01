@@ -1,0 +1,45 @@
+#include <stdio.h>
+
+int main() {
+  //linha 1 sai às 8 horas de seg a sext, sabado e domingo sai 10 hrs
+  // linha 2 às 13 horas de seg a sext, sabado e domingo sai 15 hrs
+  // linha 3 às 19 horas, seg a sext, sabado e domingo sai 18 hrs
+  
+  int linha_onibus, dia;
+  printf("Qual a linha do ônibus? digite de 1 a 3:");
+  if (scanf("%d", &linha_onibus)<1 || linha_onibus>3){
+    printf("Está linha não está disponível");
+    return 0;
+  }
+  
+  printf("Qual dia da semana? sendo segunda = 1 e domingo = 7:");
+  if (scanf("%d", &dia) !=1){
+    printf("Digite um valor numerico referente aos dias.");
+    return 0;
+  }
+  if (linha_onibus == 1) {
+      if (dia >= 1 && dia <= 5) { // Segunda a Sexta
+          printf("Linha 1 no dia selecionado sai às 8 horas.\n");
+      } else { // Sábado e Domingo
+          printf("Linha 1 no dia selecionado sai às 10 horas.\n");
+      }
+  }
+  if (linha_onibus == 2) {
+    if(dia >= 1 && dia<= 5){
+      printf("Linha 2 no dia selecionado sai às 13 horas.\n");
+    }
+    else {
+      printf("Linha 2 no dia selecionado sai às 15 horas.\n");
+    }
+  }
+  if (linha_onibus == 3){
+    if (dia>=1 && dia<=5){
+      printf("Linha 3 no dia selecionado sai às 19 horas.\n");
+    }
+    else {
+      printf("Linha 3 no dia selecionado sai às 18 horas.");
+    }
+  }
+ 
+  return 0;
+}
